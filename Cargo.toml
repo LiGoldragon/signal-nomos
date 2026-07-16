@@ -1,0 +1,13 @@
+[package]
+name="signal-nomos"
+version="0.1.0"
+edition="2024"
+rust-version="1.89"
+license="MIT OR Apache-2.0"
+repository="https://github.com/LiGoldragon/signal-nomos"
+description="Typed wire contract for the Nomos transformation daemon"
+[dependencies]
+rkyv={version="0.8",features=["bytecheck"]}
+signal-sema-storage={git="https://github.com/LiGoldragon/signal-sema-storage.git",rev="a86cb480ff9505b0c068fc0152de352be99d0ef2"}
+[lints.rust]
+unsafe_code="forbid"
