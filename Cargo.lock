@@ -98,33 +98,9 @@ dependencies = [
 [[package]]
 name = "core-logos"
 version = "0.1.0"
-source = "git+https://github.com/LiGoldragon/core-logos.git?rev=17cbd7596df2#17cbd7596df203e0717fe079b7688cc60ec05e4b"
-dependencies = [
- "content-identity",
- "name-table",
- "rkyv",
- "thiserror",
-]
-
-[[package]]
-name = "core-logos"
-version = "0.1.0"
 source = "git+https://github.com/LiGoldragon/core-logos.git?rev=17cbd7596df203e0717fe079b7688cc60ec05e4b#17cbd7596df203e0717fe079b7688cc60ec05e4b"
 dependencies = [
  "content-identity",
- "name-table",
- "rkyv",
- "thiserror",
-]
-
-[[package]]
-name = "core-nomos"
-version = "0.1.0"
-source = "git+https://github.com/LiGoldragon/core-nomos.git?rev=88a1ecf552727b2037263423da8a4af0e65619e1#88a1ecf552727b2037263423da8a4af0e65619e1"
-dependencies = [
- "content-identity",
- "core-logos 0.1.0 (git+https://github.com/LiGoldragon/core-logos.git?rev=17cbd7596df2)",
- "core-schema",
  "name-table",
  "rkyv",
  "thiserror",
@@ -381,11 +357,10 @@ dependencies = [
 [[package]]
 name = "signal-sema-storage"
 version = "0.1.0"
-source = "git+https://github.com/LiGoldragon/signal-sema-storage.git?rev=a86cb480ff9505b0c068fc0152de352be99d0ef2#a86cb480ff9505b0c068fc0152de352be99d0ef2"
+source = "git+https://github.com/LiGoldragon/signal-sema-storage.git?rev=1bd593f4040307bd4d1db76ee15aa67d00efe1e6#1bd593f4040307bd4d1db76ee15aa67d00efe1e6"
 dependencies = [
  "blake3",
- "core-logos 0.1.0 (git+https://github.com/LiGoldragon/core-logos.git?rev=17cbd7596df203e0717fe079b7688cc60ec05e4b)",
- "core-nomos",
+ "core-logos",
  "core-schema",
  "name-table",
  "rkyv",

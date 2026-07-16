@@ -1,1 +1,15 @@
-use signal_nomos::{encode_request,Request}; use signal_sema_storage::{ContentHash,FixtureScope,SlotIdentifier}; #[test] fn transform_round_trips(){let value=Request::Transform{scope:FixtureScope(1),schema:ContentHash([1;32]),output_slot:SlotIdentifier(2)};let bytes=encode_request(&value).unwrap();assert_eq!(rkyv::from_bytes::<Request,rkyv::rancor::Error>(&bytes).unwrap(),value)}
+use signal_nomos::{Request, encode_request};
+use signal_sema_storage::{ContentHash, FixtureScope, SlotIdentifier};
+#[test]
+fn transform_round_trips() {
+    let value = Request::Transform {
+        scope: FixtureScope(1),
+        schema: ContentHash([1; 32]),
+        output_slot: SlotIdentifier(2),
+    };
+    let bytes = encode_request(&value).unwrap();
+    assert_eq!(
+        rkyv::from_bytes::<Request, rkyv::rancor::Error>(&bytes).unwrap(),
+        value
+    )
+}
