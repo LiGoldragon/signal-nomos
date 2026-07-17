@@ -8,7 +8,7 @@ repository="https://github.com/LiGoldragon/signal-nomos"
 description="Typed wire contract for the Nomos transformation daemon"
 [dependencies]
 rkyv={version="0.8",features=["bytecheck"]}
-signal-sema-storage={git="https://github.com/LiGoldragon/signal-sema-storage.git",rev="fe925a0afeb0b5da1dad06bef06e3db4b46bac38"}
+signal-sema-storage={git="https://github.com/LiGoldragon/signal-sema-storage.git",rev="54178a10f893cc0eef09e62f371487f09823937f"}
 thiserror="2"
 [lints.rust]
 unsafe_code="forbid"
