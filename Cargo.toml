@@ -1,6 +1,6 @@
 [package]
 name="signal-nomos"
-version="0.1.0"
+version="0.2.0"
 edition="2024"
 rust-version="1.89"
 license="MIT OR Apache-2.0"
@@ -8,7 +8,7 @@ repository="https://github.com/LiGoldragon/signal-nomos"
 description="Typed wire contract for the Nomos transformation daemon"
 [dependencies]
 rkyv={version="0.8",features=["bytecheck"]}
-signal-sema-storage={git="https://github.com/LiGoldragon/signal-sema-storage.git",rev="21c3ad78227ec847bda37cfa2494619cdf1b0b70"}
+signal-sema-storage={git="https://github.com/LiGoldragon/signal-sema-storage.git",rev="25ac4fd0abf5d58ab9fce1f10d58220b62bef902"}
 thiserror="2"
 [lints.rust]
 unsafe_code="forbid"
