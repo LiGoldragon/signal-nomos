@@ -159,8 +159,8 @@ dependencies = [
 
 [[package]]
 name = "core-nomos"
-version = "0.25.0"
-source = "git+https://github.com/LiGoldragon/core-nomos.git?rev=0bb71190b6661bb2aabd144970134191cf04db6e#0bb71190b6661bb2aabd144970134191cf04db6e"
+version = "0.26.0"
+source = "git+https://github.com/LiGoldragon/core-nomos.git?rev=d47e1e4441b7110051aba0f54eb6dea31c057b4c#d47e1e4441b7110051aba0f54eb6dea31c057b4c"
 dependencies = [
  "content-identity 0.3.0",
  "content-identity 0.5.0",
@@ -494,7 +494,7 @@ dependencies = [
 
 [[package]]
 name = "signal-nomos"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "content-identity 0.5.0",
  "core-nomos",
