@@ -52,6 +52,13 @@ impl SlotGeneration {
     pub const fn value(self) -> u64 {
         self.0
     }
+
+    pub const fn checked_successor(self) -> Option<Self> {
+        match self.0.checked_add(1) {
+            Some(value) => Some(Self(value)),
+            None => None,
+        }
+    }
 }
 
 /// Compare-and-set expectation for a deployment.
@@ -514,6 +521,7 @@ pub enum Rejection {
     CapsuleArchiveInvalid,
     ProjectionInvalid,
     ProjectionStale,
+    TranslatorReceiptUnsupported,
     Unauthorized,
     EthosPopulationInvalid,
     ReferenceUniverseInvalid,

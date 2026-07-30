@@ -150,6 +150,11 @@ fn projection_advance_requires_the_exact_successor_version() {
         overflow.validate(),
         Err(signal_nomos::Error::ProjectionVersionOverflow)
     ));
+    assert_eq!(
+        SlotGeneration::new(8).checked_successor(),
+        Some(SlotGeneration::new(9))
+    );
+    assert_eq!(SlotGeneration::new(u64::MAX).checked_successor(), None);
 }
 
 #[test]
