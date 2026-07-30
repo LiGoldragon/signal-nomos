@@ -1,14 +1,15 @@
 [package]
 name="signal-nomos"
-version="0.1.0"
+version="0.2.0"
 edition="2024"
 rust-version="1.89"
 license="MIT OR Apache-2.0"
 repository="https://github.com/LiGoldragon/signal-nomos"
-description="Typed wire contract for the Nomos transformation daemon"
+description="Pure typed wire contract for the stateful Nomos daemon"
 [dependencies]
+capsule-content-identity={package="content-identity",git="https://github.com/LiGoldragon/content-identity.git",rev="896b21e17f31b66d0802bff899b4b60acea9c0f1"}
+core-nomos={git="https://github.com/LiGoldragon/core-nomos.git",rev="0bb71190b6661bb2aabd144970134191cf04db6e"}
 rkyv={version="0.8",features=["bytecheck"]}
-signal-sema-storage={git="https://github.com/LiGoldragon/signal-sema-storage.git",rev="31ab48608a3c2eab0733dcb16a3351251a70789d"}
 thiserror="2"
 [lints.rust]
 unsafe_code="forbid"
