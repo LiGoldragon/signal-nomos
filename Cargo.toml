@@ -8,7 +8,7 @@ repository="https://github.com/LiGoldragon/signal-nomos"
 description="Pure typed wire contract for the stateful Nomos daemon"
 [dependencies]
 capsule-content-identity={package="content-identity",git="https://github.com/LiGoldragon/content-identity.git",rev="896b21e17f31b66d0802bff899b4b60acea9c0f1"}
-core-nomos={git="https://github.com/LiGoldragon/core-nomos.git",rev="6470efc171a2acb652fba7d512f76c26f7a53d82"}
+core-nomos={git="https://github.com/LiGoldragon/core-nomos.git",rev="b8defabd1cfbda2ed3aa61f7eee152f617b3c958"}
 rkyv={version="0.8",features=["bytecheck"]}
 thiserror="2"
 [dev-dependencies]
