@@ -1,5 +1,5 @@
 {
-  description = "core-nomos — the stringless Core of Nomos: macros as typed data lowering CoreSchema to CoreLogos, with the real generated Rust as the acceptance oracle";
+  description = "signal-nomos — pure typed Nomos seating wire vocabulary";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -16,14 +16,8 @@
         pkgs = import nixpkgs { inherit system; };
         rust = rust-build.lib.${system}.fromPkgs pkgs;
         inherit (rust) craneLib toolchain;
-        compatibilityGoldenFilter =
-          path: type:
-          type == "regular"
-          && pkgs.lib.hasInfix "/tests/goldens/" path
-          && pkgs.lib.hasSuffix ".bin" path;
         src = rust.cleanSource {
           root = ./.;
-          extraFilters = [ compatibilityGoldenFilter ];
         };
         commonArguments = { inherit src; strictDeps = true; };
         cargoArtifacts = craneLib.buildDepsOnly commonArguments;
@@ -44,7 +38,7 @@
           });
         };
         devShells.default = pkgs.mkShell {
-          name = "core-nomos";
+          name = "signal-nomos";
           packages = [ pkgs.jujutsu toolchain ];
         };
       });
