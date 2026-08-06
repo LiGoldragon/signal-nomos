@@ -10,6 +10,9 @@ use signal_nomos::{
     encode_reply, encode_request,
 };
 
+const MANIFEST: &str = include_str!("../Cargo.toml");
+const LOCKFILE: &str = include_str!("../Cargo.lock");
+
 fn population(version: NameTreeProjectionVersion) -> core_nomos::SealedNomosPopulation {
     LoadedNomosPopulation::from_typed(
         AuthoredTransformerSet::try_new(Vec::new()).expect("empty authored set"),
@@ -160,7 +163,6 @@ fn projection_advance_requires_the_exact_successor_version() {
 #[test]
 fn contract_source_has_no_daemon_storage_or_legacy_evaluator_reachability() {
     let source = include_str!("../src/lib.rs");
-    let manifest = include_str!("../Cargo.toml");
     for forbidden in [
         "signal_sema_storage",
         "sema_engine",
@@ -170,8 +172,25 @@ fn contract_source_has_no_daemon_storage_or_legacy_evaluator_reachability() {
         "tokio",
     ] {
         assert!(
-            !source.contains(forbidden) && !manifest.contains(forbidden),
+            !source.contains(forbidden) && !MANIFEST.contains(forbidden),
             "pure wire contract must not contain {forbidden}"
+        );
+    }
+}
+
+#[test]
+fn current_and_historical_nomos_boundaries_pin_their_exact_revisions() {
+    for revision in [
+        "22de53fced0eff372930f5b7baec0c667f1a16d5",
+        "d47e1e4441b7110051aba0f54eb6dea31c057b4c",
+    ] {
+        assert!(
+            MANIFEST.contains(revision),
+            "manifest must pin exact core-nomos revision {revision}"
+        );
+        assert!(
+            LOCKFILE.contains(revision),
+            "lockfile must resolve exact core-nomos revision {revision}"
         );
     }
 }
